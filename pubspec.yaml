@@ -39,6 +39,7 @@ dependencies:
   equatable: any
   sqflite: any
   get: any
+  dio: any
 
 dev_dependencies:
   flutter_test:

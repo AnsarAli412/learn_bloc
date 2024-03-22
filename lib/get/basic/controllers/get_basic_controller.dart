@@ -4,11 +4,11 @@ class GetBasicController extends GetxController{
   var count = 0.obs;
 
   increment(){
-    count++;
-    update();
+    count.value++;
+    // update();
   }
   decrement(){
-    count--;
-    update();
+    count.value--;
+    // update();
   }
 }

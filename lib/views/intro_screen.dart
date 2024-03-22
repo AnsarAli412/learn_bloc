@@ -26,7 +26,7 @@ class IntroScreen extends StatelessWidget {
           _divider(thick: 2),
           _titleView("GetX"),
           _divider(thick: 2),
-          _itemView("Basic", GetBasicScreen(), context),
+          _itemView("Basic", const GetBasicScreen(), context),
           _divider(),
           _itemView("Intermediate", const NamesScreen(), context),
           _divider(),
