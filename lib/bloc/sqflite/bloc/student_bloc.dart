@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_bloc_flutter/sqflite/bloc/student_events.dart';
-import 'package:learn_bloc_flutter/sqflite/bloc/student_state.dart';
-import 'package:learn_bloc_flutter/sqflite/models/students_model.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/bloc/student_events.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/bloc/student_state.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/models/students_model.dart';
 
 class StudentBloc extends Bloc<StudentEvent, StudentState> {
   StudentBloc() : super(StudentInitState()) {

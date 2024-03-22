@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_bloc_flutter/intermediate/blocs/names_bloc.dart';
+import 'package:learn_bloc_flutter/bloc/intermediate/blocs/names_bloc.dart';
 
 import '../blocs/name_events.dart';
 

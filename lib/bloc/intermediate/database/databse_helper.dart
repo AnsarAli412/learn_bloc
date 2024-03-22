@@ -1,4 +1,4 @@
-import 'package:learn_bloc_flutter/sqflite/models/students_model.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/models/students_model.dart';
 import 'package:sqflite/sqflite.dart';
 
 mixin class DatabaseHelper {

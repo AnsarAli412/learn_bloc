@@ -1,5 +1,7 @@
-import 'package:learn_bloc_flutter/intermediate/database/databse_helper.dart';
-import 'package:learn_bloc_flutter/sqflite/models/students_model.dart';
+
+
+import 'package:learn_bloc_flutter/bloc/intermediate/database/databse_helper.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/models/students_model.dart';
 
 class StudentEvent with DatabaseHelper{
    StudentEvent();

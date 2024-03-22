@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_bloc_flutter/basics/blocs/counter_states.dart';
+import 'package:learn_bloc_flutter/bloc/basics/blocs/counter_states.dart';
 
 class CounterScreen extends StatelessWidget {
   const CounterScreen({super.key});
@@ -20,6 +20,7 @@ class CounterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("Basics"),),
       body: Center(
         child: BlocBuilder<CounterBloc,int>(builder: (_,count)=>Text(count.toString())),
       ),

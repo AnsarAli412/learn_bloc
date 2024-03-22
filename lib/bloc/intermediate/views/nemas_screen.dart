@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_bloc_flutter/intermediate/blocs/names_bloc.dart';
-import 'package:learn_bloc_flutter/intermediate/views/add_name_screen.dart';
-
+import 'package:learn_bloc_flutter/bloc/intermediate/blocs/names_bloc.dart';
+import 'package:learn_bloc_flutter/bloc/intermediate/views/add_name_screen.dart';
 import '../blocs/name_events.dart';
 import '../blocs/name_states.dart';
 
@@ -12,6 +11,7 @@ class NamesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("Intermediate"),),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(

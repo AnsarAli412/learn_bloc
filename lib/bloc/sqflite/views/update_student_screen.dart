@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_bloc_flutter/sqflite/bloc/student_events.dart';
-import 'package:learn_bloc_flutter/sqflite/views/widgets/add_student_widgets.dart';
-
+import 'package:learn_bloc_flutter/bloc/sqflite/bloc/student_events.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/views/widgets/add_student_widgets.dart';
 import '../bloc/student_bloc.dart';
 import '../models/students_model.dart';
 

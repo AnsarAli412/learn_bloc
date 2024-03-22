@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_bloc_flutter/sqflite/bloc/student_bloc.dart';
-import 'package:learn_bloc_flutter/sqflite/bloc/student_events.dart';
-import 'package:learn_bloc_flutter/sqflite/bloc/student_state.dart';
-import 'package:learn_bloc_flutter/sqflite/views/widgets/students_widgets.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/bloc/student_bloc.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/bloc/student_events.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/bloc/student_state.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/views/widgets/students_widgets.dart';
 
 class StudentsScreen extends StatefulWidget {
   const StudentsScreen({super.key});

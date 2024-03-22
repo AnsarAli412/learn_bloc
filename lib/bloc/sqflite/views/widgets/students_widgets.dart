@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_bloc_flutter/sqflite/bloc/student_bloc.dart';
-import 'package:learn_bloc_flutter/sqflite/bloc/student_events.dart';
-import 'package:learn_bloc_flutter/sqflite/models/students_model.dart';
-import 'package:learn_bloc_flutter/sqflite/views/add_student_screen.dart';
-import 'package:learn_bloc_flutter/sqflite/views/update_student_screen.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/bloc/student_bloc.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/bloc/student_events.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/models/students_model.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/views/add_student_screen.dart';
+import 'package:learn_bloc_flutter/bloc/sqflite/views/update_student_screen.dart';
 
 class StudentsWidgets{
   BuildContext context;
