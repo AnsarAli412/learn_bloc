@@ -10,7 +10,6 @@ class AddNameScreen extends StatelessWidget {
    AddNameScreen({super.key,required this.name, required this.index});
 
   var nameController = TextEditingController();
-
   final nameKey = GlobalKey<FormState>();
 
   @override

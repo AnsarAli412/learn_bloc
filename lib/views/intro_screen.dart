@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learn_bloc_flutter/bloc/basics/views/counter_screen.dart';
 import 'package:learn_bloc_flutter/bloc/intermediate/views/nemas_screen.dart';
 import 'package:learn_bloc_flutter/bloc/sqflite/views/students_screen.dart';
+import '../get/basic/views/get_basic_screen.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({super.key});
@@ -25,7 +26,7 @@ class IntroScreen extends StatelessWidget {
           _divider(thick: 2),
           _titleView("GetX"),
           _divider(thick: 2),
-          _itemView("Basic", const CounterScreen(), context),
+          _itemView("Basic", GetBasicScreen(), context),
           _divider(),
           _itemView("Intermediate", const NamesScreen(), context),
           _divider(),
