@@ -37,7 +37,7 @@ class GetBasicScreen extends StatelessWidget {
                 onPressed: () {
                   getController.decrement();
                 },
-                child: const Icon(Icons.add),
+                child: const Icon(Icons.remove),
               )),
         ],
       ),
