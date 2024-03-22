@@ -8,46 +8,46 @@ mixin class DatabaseHelper {
 
   Database? database;
 
-  Future<Database?> getDatabase() async {
+  Future<Database?> _getDatabase() async {
     if (database != null) return database;
-    return await initDatabase();
+    return await _initDatabase();
   }
 
-  Future<String> createDatabase() async {
+  Future<String> _createDatabase() async {
     var name = getDatabasesPath();
     return "$name/$_dbName";
   }
 
-  Future<Database> initDatabase() async {
-    var dbName = await createDatabase();
+  Future<Database> _initDatabase() async {
+    var dbName = await _createDatabase();
     return await openDatabase(dbName, version: VERSION, onCreate: _createTable);
   }
 
   _createTable(Database db, int version) async {
     var query =
-        " CREATE TABLE $TABLENAME ('id' INTEGER PRIMARY KEY, 'name' TEXT, 'email' TEXT, 'phone' TEXT, 'gender' TEXT, 'isMarried' INTEGER)";
-    await db.query(query);
+        " CREATE TABLE $TABLENAME ('id' INTEGER PRIMARY KEY, 'name' TEXT, 'email' TEXT, 'phone' TEXT, 'gender' TEXT, 'isMarried' INTEGER) ";
+    await db.execute(query);
   }
 
   Future<int?> insertData(StudentsModel data) async {
-    var db = await getDatabase();
+    var db = await _getDatabase();
     return await db?.insert(TABLENAME, data.toJson());
   }
 
   Future<int?> updateData(StudentsModel data) async {
-    var db = await getDatabase();
+    var db = await _getDatabase();
     return await db?.update(TABLENAME, data.toJson(),
         where: "id = ?", whereArgs: [data.id]);
   }
 
-  Future<List<StudentsModel>?> getData() async {
-    var db = await getDatabase();
+  Future<List<StudentsModel>> getData() async {
+    var db = await _getDatabase();
     var data = await db?.query(TABLENAME);
-    return data?.map((e) => StudentsModel.fromJson(e)).toList();
+    return data?.map((e) => StudentsModel.fromJson(e)).toList()??List<StudentsModel>.empty();
   }
 
   Future<int?> removeData(int id) async {
-    var db = await getDatabase();
+    var db = await _getDatabase();
     return await db?.delete(TABLENAME,where: "id = ?",whereArgs: [id]);
   }
 }

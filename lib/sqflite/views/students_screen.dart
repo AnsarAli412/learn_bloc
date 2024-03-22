@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_bloc_flutter/sqflite/bloc/student_bloc.dart';
+import 'package:learn_bloc_flutter/sqflite/bloc/student_events.dart';
 import 'package:learn_bloc_flutter/sqflite/bloc/student_state.dart';
-import 'package:learn_bloc_flutter/sqflite/models/students_model.dart';
 import 'package:learn_bloc_flutter/sqflite/views/widgets/students_widgets.dart';
 
-class StudentsScreen extends StatelessWidget {
+class StudentsScreen extends StatefulWidget {
   const StudentsScreen({super.key});
 
+  @override
+  State<StudentsScreen> createState() => _StudentsScreenState();
+}
+
+class _StudentsScreenState extends State<StudentsScreen> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<StudentBloc>().add(GetStudentsEvent());
+  }
   @override
   Widget build(BuildContext context) {
     var view = StudentsWidgets(context: context);
@@ -23,7 +33,7 @@ class StudentsScreen extends StatelessWidget {
             separatorBuilder: (_, __) {
               return const SizedBox(height: 1,);
             },
-            itemCount: data.length):Center(child: Text("Add new student"),);
+            itemCount: data.length):const Center(child: Text("Add new student"),);
       },),
     );
   }

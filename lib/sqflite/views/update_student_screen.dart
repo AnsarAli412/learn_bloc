@@ -6,28 +6,42 @@ import 'package:learn_bloc_flutter/sqflite/views/widgets/add_student_widgets.dar
 import '../bloc/student_bloc.dart';
 import '../models/students_model.dart';
 
-class UpdateStudentScreen extends StatelessWidget {
+class UpdateStudentScreen extends StatefulWidget {
   final StudentsModel data;
   final int index;
   UpdateStudentScreen({super.key, required this.data, required this.index});
 
+  @override
+  State<UpdateStudentScreen> createState() => _UpdateStudentScreenState();
+}
+
+class _UpdateStudentScreenState extends State<UpdateStudentScreen> {
   TextEditingController nameController = TextEditingController();
+
   TextEditingController emailController = TextEditingController();
+
   TextEditingController phoneController = TextEditingController();
 
   final genders = ["Male", "Female", "Others"];
+
   String selectedValue = "Male";
+
   bool isMarried = false;
 
   var updateStudentKey = GlobalKey<FormState>();
 
   @override
+  void initState() {
+    nameController = TextEditingController(text: widget.data.name);
+    emailController = TextEditingController(text: widget.data.email);
+    phoneController = TextEditingController(text: widget.data.phone);
+    selectedValue = widget.data.gender;
+    isMarried = widget.data.isMarried == 1?true:false;
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-     nameController = TextEditingController(text: data.name);
-     emailController = TextEditingController(text: data.email);
-     phoneController = TextEditingController(text: data.phone);
-     selectedValue = data.gender;
-     isMarried = data.isMarried == 1?true:false;
     var view = AddStudentWidgets(context: context);
     return Scaffold(
       appBar: view.appBarView(title: "Update Student"),
@@ -46,7 +60,7 @@ class UpdateStudentScreen extends StatelessWidget {
               const SizedBox(
                 height: 5,
               ),
-              view.textFormField(phoneController, hintText: "Enter phone number"),
+              view.textFormField(phoneController, hintText: "Enter phone number",maxLength: 10,keyBoardType: TextInputType.number),
               const SizedBox(
                 height: 5,
               ),
@@ -76,14 +90,14 @@ class UpdateStudentScreen extends StatelessWidget {
               ),
               view.addButtonView(onPressed: () {
                 var data = StudentsModel(
-                    id: "".hashCode,
+                    id: widget.data.id,
                     name: nameController.text,
                     email: emailController.text,
                     phone: phoneController.text,
                     gender: selectedValue,
                     isMarried: isMarried?1:0);
                 if (updateStudentKey.currentState!.validate()) {
-                  context.read<StudentBloc>().add(UpdateStudentEvent(data,index));
+                  context.read<StudentBloc>().add(UpdateStudentEvent(data,widget.index));
                   Navigator.pop(context);
                 }
               }, title: "Update")

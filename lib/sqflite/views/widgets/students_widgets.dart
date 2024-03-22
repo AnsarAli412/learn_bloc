@@ -39,7 +39,7 @@ class StudentsWidgets{
                   Navigator.push(context, MaterialPageRoute(builder: (_)=>UpdateStudentScreen(data: data,index: index,)));
                 }, icon: const Icon(Icons.edit,color: Colors.deepPurple,)),
                 IconButton(onPressed: (){
-                  showDeleteStudentDialog(data.name,index,data.id);
+                  showDeleteStudentDialog(data.name,index,data.id??0);
                 }, icon: const Icon(Icons.delete,color: Colors.red,)),
               ],
             )

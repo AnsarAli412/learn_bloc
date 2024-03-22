@@ -70,7 +70,6 @@ class AddStudentScreen extends StatelessWidget {
               ),
               view.addButtonView(onPressed: () {
                 var data = StudentsModel(
-                    id: "".hashCode,
                     name: nameController.text,
                     email: emailController.text,
                     phone: phoneController.text,

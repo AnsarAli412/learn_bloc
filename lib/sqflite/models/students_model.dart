@@ -5,7 +5,7 @@ StudentsModel studentsModelFromJson(String str) => StudentsModel.fromJson(json.d
 String studentsModelToJson(StudentsModel data) => json.encode(data.toJson());
 
 class StudentsModel {
-  int id;
+  int? id;
   String name;
   String email;
   String phone;
@@ -13,7 +13,7 @@ class StudentsModel {
   int isMarried;
 
   StudentsModel({
-    required this.id,
+     this.id,
     required this.name,
     required this.email,
     required this.phone,

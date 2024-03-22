@@ -2,9 +2,9 @@
 import '../models/students_model.dart';
 
 class StudentState {
-  final List<StudentsModel> students;
+  List<StudentsModel> students = [];
 
-  const StudentState({this.students = const <StudentsModel>[]});
+   StudentState({this.students = const []});
 
   StudentState copyWith(
       {List<StudentsModel> students = const [], StudentState? state}) {
